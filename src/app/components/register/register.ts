@@ -34,7 +34,7 @@ export class Register {
       role: this.role
     };
 
-    this.http.post('http://localhost:3000/users/register', body)
+    this.http.post('https://assignment-portal-backend-zyn8.onrender.com/users/register', body)
       .subscribe({
         next: (response: any) => {
           this.loading = false;

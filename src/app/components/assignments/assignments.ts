@@ -35,7 +35,7 @@ ngOnInit() {
     return;
   }
 
-  this.http.get<any[]>('http://localhost:3000/assignments?t=' + Date.now())
+  this.http.get<any[]>('https://assignment-portal-backend-zyn8.onrender.com/assignments?t=' + Date.now())
     .subscribe({
       next: (data) => {
         this.assignments = data;
@@ -53,13 +53,13 @@ ngOnInit() {
       dueDate: this.newDueDate,
       createdBy: this.user._id
     };
-    this.http.post('http://localhost:3000/assignments', body)
+    this.http.post('https://assignment-portal-backend-zyn8.onrender.com/assignments', body)
       .subscribe({ next: () => {}, error: () => {} });
     setTimeout(() => { window.location.reload(); }, 2000);
   }
 
   deleteAssignment(id: string) {
-    this.http.delete('http://localhost:3000/assignments/' + id)
+    this.http.delete('https://assignment-portal-backend-zyn8.onrender.com/assignments/' + id)
       .subscribe({ next: () => {}, error: () => {} });
     setTimeout(() => { window.location.reload(); }, 1000);
   }

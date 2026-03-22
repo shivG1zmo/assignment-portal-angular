@@ -39,7 +39,7 @@ export class Login {
     // It takes two callbacks:
     // First  = runs if request succeeds
     // Second = runs if request fails
-    this.http.post('http://localhost:3000/users/login', body)
+    this.http.post('https://assignment-portal-backend-zyn8.onrender.com/users/login', body)
       .subscribe({
         next: (response: any) => {
           this.loading = false;

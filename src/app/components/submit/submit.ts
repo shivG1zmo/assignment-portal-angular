@@ -50,7 +50,7 @@ export class Submit implements OnInit {
   formData.append('assignment', this.assignmentId);
   formData.append('student', this.user._id);
 
-  this.http.post('http://localhost:3000/submissions', formData)
+  this.http.post('https://assignment-portal-backend-zyn8.onrender.com/submissions', formData)
     .subscribe({ next: () => {}, error: () => {} });
 
   setTimeout(() => {
