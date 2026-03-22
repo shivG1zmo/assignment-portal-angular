@@ -1,0 +1,43 @@
+<div class="page">
+  <div class="navbar">
+    <h2>📚 Assignment Portal</h2>
+    <div class="nav-right">
+      <span>Hello, {{ user?.name }}</span>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="create-section" *ngIf="user?.role === 'professor'">
+      <h3>Create New Assignment</h3>
+      <form (ngSubmit)="createAssignment()">
+        <input type="text" [(ngModel)]="newTitle" name="newTitle" placeholder="Assignment title" required />
+        <input type="text" [(ngModel)]="newDescription" name="newDescription" placeholder="Description" />
+        <input type="date" [(ngModel)]="newDueDate" name="newDueDate" required />
+        <button type="submit" [disabled]="creating">
+          {{ creating ? 'Creating...' : 'Create Assignment' }}
+        </button>
+      </form>
+    </div>
+
+    <h3 class="list-title">All Assignments</h3>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search assignments..." class="search-bar" />
+    <ng-container *ngFor="let a of assignments">
+      <div class="assignment-card">
+        <h4>{{ a.title }}</h4>
+        <p>{{ a.description }}</p>
+        <p class="due">Due: {{ a.dueDate | date:'mediumDate' }}</p>
+        <p class="professor">Posted by: {{ a.createdBy?.name }}</p>
+        <button class="submit-btn" *ngIf="user?.role === 'student'" (click)="goToSubmit(a._id)">
+          Submit Assignment
+        </button>
+        <button class="delete-btn" *ngIf="user?.role === 'professor'" (click)="deleteAssignment(a._id)">
+          Delete
+        </button>
+      </div>
+    </ng-container>
+
+    <p *ngIf="assignments.length === 0">No assignments yet.</p>
+
+  </div>
+</div>

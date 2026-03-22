@@ -1,0 +1,24 @@
+<div class="page">
+  <div class="navbar">
+    <h2>📚 Assignment Portal</h2>
+    <button class="back-btn" (click)="goBack()">← Back</button>
+  </div>
+
+  <div class="content">
+    <div class="card">
+      <h3>Submit Assignment</h3>
+
+      <div class="form-group">
+        <label>Select File (PDF, DOC, etc.)</label>
+        <input type="file" (change)="onFileSelected($event)" />
+      </div>
+
+      <button (click)="submitAssignment()" [disabled]="submitting || !selectedFile">
+        {{ submitting ? 'Submitting...' : 'Submit' }}
+      </button>
+
+      <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+      <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+    </div>
+  </div>
+</div>
