@@ -1,59 +1,87 @@
-# FrontendAngular
+# Assignment Portal — Student Portal (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+An Angular-based portal for students to view and submit assignments. Part of the **Student Assignment Portal**, a full-stack web application built with the MERN/MEAN stack.
 
-## Development server
+🔗 **Live Demo:** [assignment-portal-angular.vercel.app](https://assignment-portal-angular.vercel.app/login)
 
-To start a local development server, run:
+---
+
+## 🗂️ Related Repositories
+
+| Part | Repo | Live |
+|------|------|------|
+| Professor Dashboard (React) | [assignment-portal-react](https://github.com/shivG1zmo/assignment-portal-react) | [Live](https://assignment-portal-react.vercel.app/) |
+| Student Portal (Angular) | [assignment-portal-angular](https://github.com/shivG1zmo/assignment-portal-angular) | [Live](https://assignment-portal-angular.vercel.app/login) |
+| Backend (Node.js/Express) | [assignment-portal-backend](https://github.com/shivG1zmo/assignment-portal-backend) | [Live](https://assignment-portal-backend-zyn8.onrender.com) |
+
+---
+
+## ✨ Features
+
+- Student login and authentication
+- View assigned tasks and deadlines
+- Upload and submit assignment files
+- View submission history
+
+---
+
+## 🛠️ Tech Stack
+
+- **Angular** — frontend framework
+- **TypeScript** — core language
+- **Angular Router** — client-side routing
+- **Fetch API** — HTTP requests to backend
+- **Vercel** — deployment
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js and Angular CLI installed
+- Backend server running (see [assignment-portal-backend](https://github.com/shivG1zmo/assignment-portal-backend))
+
+### Installation
 
 ```bash
+git clone https://github.com/shivG1zmo/assignment-portal-angular.git
+cd assignment-portal-angular
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The app runs at `http://localhost:4200` by default.
 
-## Code scaffolding
+> **Note:** Make sure the backend is running and the API URL points to your local backend or the deployed Render URL.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🌐 Deployment
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Deployed on **Vercel**. To deploy your own:
 
 ```bash
-ng generate --help
+npm install -g vercel
+vercel
 ```
 
-## Building
+---
 
-To build the project run:
+## 📁 Project Structure
 
-```bash
-ng build
+```
+src/
+├── app/
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Route-level page components
+│   ├── services/         # Angular services for API calls
+│   ├── app-routing.module.ts
+│   └── app.module.ts
+└── index.html
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 👤 Author
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Shivram C** — [github.com/shivG1zmo](https://github.com/shivG1zmo)
